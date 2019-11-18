@@ -7,6 +7,7 @@ Created on Fri Nov 15 21:37:42 2019
 import cozmo
 from cozmo.util import degrees, distance_mm, speed_mmps
 from cozmo.util import Pose
+import asyncio
 
 
 def explore_the_world(robot: cozmo.robot.Robot):

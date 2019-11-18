@@ -11,6 +11,7 @@ from cozmo.util import degrees, Pose
 from cozmo.util import distance_mm, speed_mmps
 
 
+
 def find_face(robot: cozmo.robot.Robot):
     global pose
 
@@ -31,9 +32,7 @@ def find_face(robot: cozmo.robot.Robot):
 
             robot.say_text("Hello Human").wait_for_completed()
 
-            robot.go_to_pose(Pose(pose.position.x, pose.position.y, pose.position.z,
-                                  angle_z=degrees(pose.rotation.angle_z.degrees)),
-                             relative_to_robot=True).wait_for_completed()
+            robot.go_to_pose(Pose(0.0, 0.0, 0.0, angle_z=degrees(0)), relative_to_robot=False).wait_for_completed()
             break
 
 

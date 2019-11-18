@@ -11,6 +11,7 @@ from cozmo.util import degrees, Pose
 from functions.get_in_position import get_in_position
 from functions.explore_the_world import explore_the_world
 from functions.find_face import find_face
+from functions.ar_marker_detection import cozmo_action_ar_marker_cards
 
 
 
@@ -23,19 +24,20 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
     find_face(robot)
     cozmo.robot.Robot.drive_off_charger_on_connect = False
-cozmo.run_program(cozmo_program, use_viewer=True)
+
 
 # add communication
     
 ############################################## Game Preparation ###################################    
 
 # Victory condition check
-# Reset game
+# if victory is false -> Reset game
 # Explain game rules to the player
 
 ############################################# Play the game ######################################
 
 # Show markers
+    cozmo_action_ar_marker_cards(robot)
 # add communication
 # Store the sequence of the control cards
 # Execute the actions.
@@ -44,5 +46,10 @@ cozmo.run_program(cozmo_program, use_viewer=True)
 ############################################# Game result ########################################
 
 # add communication
-
+    
+    
+    
+    
+    
+cozmo.run_program(cozmo_program, use_viewer=True)
 

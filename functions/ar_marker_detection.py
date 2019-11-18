@@ -7,7 +7,7 @@ Created on Nov 17, 2019
 
 
 import time
-
+import asyncio
 import cozmo
 from cozmo.objects import CustomObject, CustomObjectMarkers, CustomObjectTypes
 from functions.detectcube import detect_cube
@@ -18,35 +18,37 @@ from functions.turnleft import turn_left
 from functions.turnright import turn_right
 from functions.driveforward import drive_forward
 from functions.movebackward import move_backward
+from cozmo.util import degrees, distance_mm, speed_mmps
 
 
 # Invoked when Cozmo sees AR Marker Cards.
 def arm_cards_appeared_event_handler(evt, **kw):
+   
     if isinstance(evt.obj, CustomObject):
         if evt.obj.object_type == CustomObjectTypes.CustomType01:
             print("Invoke DetectCube function")
-            detect_cube()
+           # detect_cube(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType02:
             print("Invoke ApproachCube function")
-            approach_cube()
+           # approach_cube(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType03:
             print("Invoke Raise Fork Lift function")
-            cozmo_lift_up()
+           # cozmo_lift_up(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType04:
             print("Invoke Lower Fork Lift function")
-            cozmo_lift_down()
+            # cozmo_lift_down(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType05:
             print("Invoke Turn Left function")
-            turn_left()
+            # turn_left(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType06:
             print("Invoke Turn Right function")
-            turn_right
+            # turn_right(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType07:
             print("Invoke Move Forward function")
-            drive_forward
+            # drive_forward(robot)
         if evt.obj.object_type == CustomObjectTypes.CustomType08:
             print("Invoke Move Backward function")
-            move_backward
+           #  move_backward(robot)
 
 
 
@@ -118,4 +120,3 @@ def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
         time.sleep(0.1)
 
 
-cozmo.run_program(cozmo_action_ar_marker_cards, use_3d_viewer=True, use_viewer=True)
