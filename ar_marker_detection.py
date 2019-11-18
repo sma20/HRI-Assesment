@@ -1,9 +1,19 @@
 #!/usr/bin/env python3
 
+
+
 import time
 
 import cozmo
 from cozmo.objects import CustomObject, CustomObjectMarkers, CustomObjectTypes
+from functions.detectcube import detect_cube
+from functions.approachcube import approach_cube
+from functions.raiseforklift import cozmo_lift_up
+from functions.lowerforklift import cozmo_lift_down
+from functions.turnleft import turn_left
+from functions.turnright import turn_right
+from functions.driveforward import drive_forward
+from functions.movebackward import move_backward
 
 
 # Invoked when Cozmo sees AR Marker Cards.
@@ -11,20 +21,28 @@ def arm_cards_appeared_event_handler(evt, **kw):
     if isinstance(evt.obj, CustomObject):
         if evt.obj.object_type == CustomObjectTypes.CustomType01:
             print("Invoke DetectCube function%s")
+            detect_cube()
         if evt.obj.object_type == CustomObjectTypes.CustomType02:
             print("Invoke ApproachCube function%s")
+            approach_cube()
         if evt.obj.object_type == CustomObjectTypes.CustomType03:
             print("Invoke Raise Fork Lift function%s")
+            cozmo_lift_up()
         if evt.obj.object_type == CustomObjectTypes.CustomType04:
             print("Invoke Lower Fork Lift function%s")
+            cozmo_lift_down()
         if evt.obj.object_type == CustomObjectTypes.CustomType05:
             print("Invoke Turn Left function%s")
+            turn_left()
         if evt.obj.object_type == CustomObjectTypes.CustomType06:
             print("Invoke Turn Right function%s")
+            turn_right
         if evt.obj.object_type == CustomObjectTypes.CustomType07:
             print("Invoke Move Forward function%s")
+            drive_forward
         if evt.obj.object_type == CustomObjectTypes.CustomType08:
             print("Invoke Move Backward function%s")
+            move_backward
 
 
 
@@ -32,7 +50,6 @@ def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
 
     # Event handlers
     robot.add_event_handler(cozmo.objects.EvtObjectAppeared, arm_cards_appeared_event_handler)
-
     # DetectCube - Circles2 Marker (30mm x 30mm)
     detect_cube_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType01,
                                               CustomObjectMarkers.Circles2,
