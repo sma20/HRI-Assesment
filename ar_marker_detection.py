@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+
+import time
+
+import cozmo
+from cozmo.objects import CustomObject, CustomObjectMarkers, CustomObjectTypes
+
+
+# Invoked when Cozmo sees AR Marker Cards.
+def arm_cards_appeared_event_handler(evt, **kw):
+    if isinstance(evt.obj, CustomObject):
+        if evt.obj.object_type == CustomObjectTypes.CustomType01:
+            print("Invoke DetectCube function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType02:
+            print("Invoke ApproachCube function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType03:
+            print("Invoke Raise Fork Lift function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType04:
+            print("Invoke Lower Fork Lift function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType05:
+            print("Invoke Turn Left function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType06:
+            print("Invoke Turn Right function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType07:
+            print("Invoke Move Forward function%s")
+        if evt.obj.object_type == CustomObjectTypes.CustomType08:
+            print("Invoke Move Backward function%s")
+
+
+
+def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
+
+    # Event handlers
+    robot.add_event_handler(cozmo.objects.EvtObjectAppeared, arm_cards_appeared_event_handler)
+
+    # DetectCube - Circles2 Marker (30mm x 30mm)
+    detect_cube_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType01,
+                                              CustomObjectMarkers.Circles2,
+                                              150, 100,
+                                              30, 30, True)
+    # ApproachCube - Diamonds2 Marker (30mm x 30mm)
+    approach_cube_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType02,
+                                              CustomObjectMarkers.Diamonds2,
+                                              150, 100,
+                                              30, 30, True)
+
+    # Raise Fork Lift - Hexagons2 Marker (30mm x 30mm)
+    raise_fork_lift_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType03,
+                                              CustomObjectMarkers.Hexagons2,
+                                              150, 100,
+                                              30, 30, True)
+
+    # Lower Fork Lift - Triangles2 Marker (30mm x 30mm)
+    lower_fork_lift_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType04,
+                                                         CustomObjectMarkers.Triangles2,
+                                                         150, 100,
+                                                         30, 30, True)
+
+    # Turn Left - Circles3 Marker (30mm x 30mm)
+    turn_left_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType05,
+                                                         CustomObjectMarkers.Circles3,
+                                                         150, 100,
+                                                         30, 30, True)
+
+    # Turn Right - Diamonds3 Marker (30mm x 30mm)
+    turn_right_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType06,
+                                                   CustomObjectMarkers.Diamonds3,
+                                                   150, 100,
+                                                   30, 30, True)
+
+    # Move Forward - Hexagons3 Marker (30mm x 30mm)
+    move_forward_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType07,
+                                                    CustomObjectMarkers.Hexagons3,
+                                                    150, 100,
+                                                    30, 30, True)
+
+    # Move Backward - Triangles3 Marker (30mm x 30mm)
+    move_backward_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType08,
+                                                    CustomObjectMarkers.Triangles3,
+                                                    150, 100,
+                                                    30, 30, True)
+
+
+
+    if ((detect_cube_obj is not None) and (approach_cube_obj is not None) and
+            (raise_fork_lift_obj is not None) and (lower_fork_lift_obj is not None) and
+            (turn_left_obj is not None) and (turn_right_obj is not None) and
+            (move_forward_obj is not None) and (move_backward_obj is not None)):
+        print("All AR Marker detection objects are defined successfully!")
+    else:
+        print("One or more AR Marker detection object definitions failed!")
+        return
+
+
+    print("Press CTRL-C to quit")
+    while True:
+        time.sleep(0.1)
+
+
+cozmo.run_program(cozmo_action_ar_marker_cards, use_3d_viewer=True, use_viewer=True)
