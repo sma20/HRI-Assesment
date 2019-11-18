@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Created on Wed Nov 17, 2019
+Created on Nov 17, 2019
 
 @author: Sethu Lekshmy
 """
