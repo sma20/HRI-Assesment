@@ -23,7 +23,7 @@ def cozmo_program(robot: cozmo.robot.Robot):
     get_in_position(robot)
 
     find_face(robot)
-    cozmo.robot.Robot.drive_off_charger_on_connect = False
+    
 
 
 # add communication
@@ -50,6 +50,6 @@ def cozmo_program(robot: cozmo.robot.Robot):
     
     
     
-    
+cozmo.robot.Robot.drive_off_charger_on_connect = False  
 cozmo.run_program(cozmo_program, use_viewer=True)
 
