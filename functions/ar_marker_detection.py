@@ -103,12 +103,18 @@ def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
                                                     150, 100,
                                                     30, 30, True)
 
+    # Start Execution - Hexagons5 Marker (30mm x 30mm)
+    start_execution_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType09,
+                                                       CustomObjectMarkers.Hexagons5,
+                                                       150, 100,
+                                                       30, 30, True)
 
 
-    if ((detect_cube_obj is not None) and (approach_cube_obj is not None) and
-            (raise_fork_lift_obj is not None) and (lower_fork_lift_obj is not None) and
-            (turn_left_obj is not None) and (turn_right_obj is not None) and
-            (move_forward_obj is not None) and (move_backward_obj is not None)):
+    if((detect_cube_obj is not None) and (approach_cube_obj is not None) and
+        (raise_fork_lift_obj is not None) and (lower_fork_lift_obj is not None) and
+        (turn_left_obj is not None) and (turn_right_obj is not None) and
+        (move_forward_obj is not None) and (move_backward_obj is not None) and
+        (start_execution_obj is not None)):
         print("All AR Marker detection objects are defined successfully!")
     else:
         print("One or more AR Marker detection object definitions failed!")
