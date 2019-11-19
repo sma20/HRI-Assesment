@@ -28,27 +28,29 @@ def arm_cards_appeared_event_handler(evt, **kw):
         if evt.obj.object_type == CustomObjectTypes.CustomType01:
             print("Invoke DetectCube function")
            # detect_cube(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType02:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType02:
             print("Invoke ApproachCube function")
            # approach_cube(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType03:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType03:
             print("Invoke Raise Fork Lift function")
            # cozmo_lift_up(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType04:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType04:
             print("Invoke Lower Fork Lift function")
             # cozmo_lift_down(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType05:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType05:
             print("Invoke Turn Left function")
             # turn_left(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType06:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType06:
             print("Invoke Turn Right function")
             # turn_right(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType07:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType07:
             print("Invoke Move Forward function")
             # drive_forward(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType08:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType08:
             print("Invoke Move Backward function")
            #  move_backward(robot)
+        elif evt.obj.object_type == CustomObjectTypes.CustomType09:
+            print("Start Execution")
 
 
 
