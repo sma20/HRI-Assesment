@@ -34,35 +34,37 @@ def arm_cards_appeared_event_handler(evt, **kw):
             print("Invoke DetectCube function")
             add_actions(DETECT_CUBE)
            # detect_cube(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType02:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType02:
             print("Invoke ApproachCube function")
             add_actions(APPROACH_CUBE)
            # approach_cube(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType03:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType03:
             print("Invoke Raise Fork Lift function")
             add_actions(RAISE_FORK_LIFT)
            # cozmo_lift_up(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType04:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType04:
             print("Invoke Lower Fork Lift function")
             #add_actions(LOWER_FORK_LIFT)
             execute_sequence(robot1)
             # cozmo_lift_down(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType05:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType05:
             print("Invoke Turn Left function")
             add_actions(TURN_LEFT)
             # turn_left(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType06:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType06:
             print("Invoke Turn Right function")
             add_actions(TURN_RIGHT)
             # turn_right(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType07:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType07:
             print("Invoke Move Forward function")
             add_actions(MOVE_FORWARD)
             # drive_forward(robot)
-        if evt.obj.object_type == CustomObjectTypes.CustomType08:
+        elif evt.obj.object_type == CustomObjectTypes.CustomType08:
             print("Invoke Move Backward function")
             add_actions(MOVE_BACKWARD)
            #  move_backward(robot)
+        elif evt.obj.object_type == CustomObjectTypes.CustomType09:
+            print("Start Execution")
 
 
 def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
@@ -120,12 +122,18 @@ def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
                                                     150, 100,
                                                     30, 30, True)
 
+    # Start Execution - Hexagons5 Marker (30mm x 30mm)
+    start_execution_obj = robot.world.define_custom_wall(CustomObjectTypes.CustomType09,
+                                                       CustomObjectMarkers.Hexagons5,
+                                                       150, 100,
+                                                       30, 30, True)
 
 
-    if ((detect_cube_obj is not None) and (approach_cube_obj is not None) and
-            (raise_fork_lift_obj is not None) and (lower_fork_lift_obj is not None) and
-            (turn_left_obj is not None) and (turn_right_obj is not None) and
-            (move_forward_obj is not None) and (move_backward_obj is not None)):
+    if((detect_cube_obj is not None) and (approach_cube_obj is not None) and
+        (raise_fork_lift_obj is not None) and (lower_fork_lift_obj is not None) and
+        (turn_left_obj is not None) and (turn_right_obj is not None) and
+        (move_forward_obj is not None) and (move_backward_obj is not None) and
+        (start_execution_obj is not None)):
         print("All AR Marker detection objects are defined successfully!")
     else:
         print("One or more AR Marker detection object definitions failed!")
