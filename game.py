@@ -12,12 +12,12 @@ from functions.get_in_position import get_in_position
 from functions.explore_the_world import explore_the_world
 from functions.find_face import find_face
 from functions.ar_marker_detection import cozmo_action_ar_marker_cards
-
-
+from functions.action_sequence import reset_sequence, execute_sequence
 
 ############################################### Map ##############################################
 
 def cozmo_program(robot: cozmo.robot.Robot):
+    reset_sequence()
     explore_the_world(robot)
 
     get_in_position(robot)
@@ -38,7 +38,8 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
 # Show markers
     cozmo_action_ar_marker_cards(robot)
-# add communication
+
+    # add communication
 # Store the sequence of the control cards
 # Execute the actions.
 # Victory condition check
