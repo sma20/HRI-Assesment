@@ -44,8 +44,7 @@ def arm_cards_appeared_event_handler(evt, **kw):
            # cozmo_lift_up(robot)
         elif evt.obj.object_type == CustomObjectTypes.CustomType04:
             print("Invoke Lower Fork Lift function")
-            #add_actions(LOWER_FORK_LIFT)
-            execute_sequence(robot1)
+            add_actions(LOWER_FORK_LIFT)
             # cozmo_lift_down(robot)
         elif evt.obj.object_type == CustomObjectTypes.CustomType05:
             print("Invoke Turn Left function")
@@ -65,6 +64,7 @@ def arm_cards_appeared_event_handler(evt, **kw):
            #  move_backward(robot)
         elif evt.obj.object_type == CustomObjectTypes.CustomType09:
             print("Start Execution")
+            execute_sequence(robot1)
 
 
 def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
