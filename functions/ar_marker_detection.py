@@ -26,10 +26,58 @@ def arm_cards_disappeared_event_handler(evt, **kw):
     set_ready_flag()
 
 global robot1
+#global execute
+global action_sequence
+execute = False
+action_sequence = []
+ready_flag = 1
+global robot1
+
+def add_actions(actionName):
+    if (ready_flag):
+        action_sequence.append(actionName)
+        confirm_card(actionName)
+        unset_ready_flag()
+
+def reset_sequence():
+    action_sequence = []
+   
+
+def unset_ready_flag():
+    ready_flag = 0;
+
+def set_ready_flag():
+    ready_flag = 1;
+
+def set_robot_for_action(robot):
+    global robot1
+    robot1 = robot
+
+#say card name
+def confirm_card(cardName):
+    global robot1
+    switcher = {
+        0: "DETECT CUBE",
+        1: "APPROACH CUBE",
+        2: "RAISE FORK LIFT",
+        3: "LOWER FORK LIFT",
+        4: "TURN LEFT",
+        5: "TURN RIGHT",
+        6: "MOVE FORWARD",
+        7: "MOVE BACKWARD"
+    }
+    card_name_text = switcher.get(cardName, "Invalid Action Card")
+    print (card_name_text)
+    robot1.say_text(card_name_text).wait_for_completed()
+
+def add_sequences(robot1):
+    print (action_sequence)
+    return action_sequence
+
 # Invoked when Cozmo sees AR Marker Cards.
 def arm_cards_appeared_event_handler(evt, **kw):
-    global robot1
-    if isinstance(evt.obj, CustomObject):
+   global robot1, execute
+   if isinstance(evt.obj, CustomObject):
         if evt.obj.object_type == CustomObjectTypes.CustomType01:
             print("Invoke DetectCube function")
             add_actions(DETECT_CUBE)
@@ -64,8 +112,9 @@ def arm_cards_appeared_event_handler(evt, **kw):
            #  move_backward(robot)
         elif evt.obj.object_type == CustomObjectTypes.CustomType09:
             print("Start Execution")
-            execute_sequence(robot1)
-
+            execute = True
+           # add_sequences(robot1)
+            return execute
 
 def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
     global robot1
@@ -135,13 +184,35 @@ def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
         (move_forward_obj is not None) and (move_backward_obj is not None) and
         (start_execution_obj is not None)):
         print("All AR Marker detection objects are defined successfully!")
-    else:
-        print("One or more AR Marker detection object definitions failed!")
-        return
+        
+       
+   # else:
+     #   print("One or more AR Marker detection object definitions failed!")
+     #   return
 
-
+   
+    
     print("Press CTRL-C to quit")
     while True:
-        time.sleep(0.1)
+        
+        number_cards_shown = len(action_sequence)
+       # print(execute)
+        if number_cards_shown == 8 and execute == False:
+            
+            print("Show me the execution card")
+          
+        if number_cards_shown == 8 and execute == True:
+                
+                robot.wait_for_all_actions_completed()
+                print("marker detection is finished")
+                return action_sequence
+                break
+        if number_cards_shown < 8:
+            print(action_sequence)
+            #print(number_cards_shown)
+        if number_cards_shown < 8 and execute == True:
+            print("No execution yet, first show me 8 cards")
+            
+    time.sleep(1)
 
 

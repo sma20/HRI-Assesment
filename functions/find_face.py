@@ -49,4 +49,4 @@ def find_face(robot: cozmo.robot.Robot):
                 # return
 
         time.sleep(1)
-    return
+    return face

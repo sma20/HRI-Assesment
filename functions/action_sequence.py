@@ -3,6 +3,10 @@
 Created on Nov 20, 2019
 @author: Arthidevi Balavignesh
 """
+import cozmo
+import time
+import asyncio
+from cozmo.util import degrees, distance_mm, speed_mmps
 from functions.detectcube import detect_cube
 from functions.approachcube import approach_cube
 from functions.raiseforklift import cozmo_lift_up
@@ -11,61 +15,30 @@ from functions.turnleft import turn_left
 from functions.turnright import turn_right
 from functions.driveforward import drive_forward
 from functions.movebackward import move_backward
-from functions.cozmo_actions import *
 
-action_sequence = []
-ready_flag = 1
-global robot1
-
-def add_actions(actionName):
-    if (ready_flag):
-        action_sequence.append(actionName)
-        confirm_card(actionName)
-        unset_ready_flag()
-
-def reset_sequence():
-    action_sequence = []
-
-def unset_ready_flag():
-    ready_flag = 0;
-
-def set_ready_flag():
-    ready_flag = 1;
-
-def set_robot_for_action(robot):
-    global robot1
-    robot1 = robot
-
-#say card name
-def confirm_card(cardName):
-    global robot1
-    switcher = {
-        0: "DETECT CUBE",
-        1: "APPROACH CUBE",
-        2: "RAISE FORK LIFT",
-        3: "LOWER FORK LIFT",
-        4: "TURN LEFT",
-        5: "TURN RIGHT",
-        6: "MOVE FORWARD",
-        7: "MOVE BACKWARD"
-    }
-    card_name_text = switcher.get(cardName, "Invalid Action Card")
-    print (card_name_text)
-    robot1.say_text(card_name_text).wait_for_completed()
+global robot
+global action_sequence
 
 
-def execute_sequence(robot):
-    for action in action_sequence:
+def execute_sequence(robot, action_sequence):
+    
+    print(action_sequence)
+    for action in range(len(action_sequence)):
         print (action)
-        switcher = {
-            0: detect_cube,
-            1: approach_cube,
-            2: cozmo_lift_up,
-            3: cozmo_lift_down,
-            4: turn_left,
-            5: turn_right,
-            6: drive_forward,
-            7: move_backward
-        }
-        func = switcher.get(action, lambda: 'Invalid')
-        func(robot)
+        if (action_sequence[action] == 1):
+            detect_cube(robot)
+        elif (action_sequence[action] == 2):
+            approach_cube(robot)
+        elif (action_sequence[action] == 3):
+            cozmo_lift_up(robot)
+        elif (action_sequence[action] == 4):
+            cozmo_lift_down(robot)
+        elif (action_sequence[action] == 5):
+            turn_left(robot)
+        elif (action_sequence[action] == 6):
+            turn_right(robot)
+        elif (action_sequence[action] == 7):
+            drive_forward(robot)
+        elif (action_sequence[action] == 8):
+            move_backward(robot)
+

@@ -11,18 +11,18 @@ from cozmo.util import degrees, Pose
 from functions.get_in_position import get_in_position
 from functions.explore_the_world import explore_the_world
 from functions.find_face import find_face
-from functions.ar_marker_detection import cozmo_action_ar_marker_cards
-from functions.action_sequence import reset_sequence, execute_sequence
+from functions.ar_marker_detection import cozmo_action_ar_marker_cards, reset_sequence
+from functions.action_sequence import *
 
 ############################################### Map ##############################################
 
 def cozmo_program(robot: cozmo.robot.Robot):
-    reset_sequence()
-    explore_the_world(robot)
+     reset_sequence()
+     cube, cube1 = explore_the_world(robot)
 
-    get_in_position(robot)
+     get_in_position(robot)
 
-    find_face(robot)
+     face = find_face(robot)
     
 
 
@@ -37,7 +37,12 @@ def cozmo_program(robot: cozmo.robot.Robot):
 ############################################# Play the game ######################################
 
 # Show markers
-    cozmo_action_ar_marker_cards(robot)
+     
+     result = cozmo_action_ar_marker_cards(robot)
+     print(result)
+    
+     print("im here")
+     execute_sequence(robot, result)
 
     # add communication
 # Store the sequence of the control cards
@@ -53,4 +58,4 @@ def cozmo_program(robot: cozmo.robot.Robot):
     
 cozmo.robot.Robot.drive_off_charger_on_connect = False  
 cozmo.run_program(cozmo_program, use_viewer=True)
-
+#cozmo.run_program(execute_sequence)

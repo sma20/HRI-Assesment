@@ -92,4 +92,4 @@ def explore_the_world(robot: cozmo.robot.Robot):
     # set the head position for the cozmo robot
     print("both cubes have been spotted ")
 
-    return
+    return cube, cube1
