@@ -194,7 +194,7 @@ def cozmo_action_ar_marker_cards(robot: cozmo.robot.Robot):
     
     print("Press CTRL-C to quit")
     while True:
-        
+        ###################!!!!!!!!!!!!!!!! We need to add a check that the card is not shown twice
         number_cards_shown = len(action_sequence)
        # print(execute)
         if number_cards_shown == 8 and execute == False:

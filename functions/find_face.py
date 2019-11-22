@@ -30,7 +30,7 @@ def find_face(robot: cozmo.robot.Robot):
 
             robot.drive_straight(distance_mm(150), speed_mmps(50)).wait_for_completed()
 
-            robot.say_text("Hello Human.How are you today?Iam excited to play a game with you.Are u ready?Let's start.Show me the Markers.").wait_for_completed()
+            robot.say_text("Hello Human.How are you today? I am excited to play a game with you. Are u ready? Let's start").wait_for_completed()
 
             robot.go_to_pose(Pose(0.0, 0.0, 0.0, angle_z=degrees(0)), relative_to_robot=False).wait_for_completed()
             break

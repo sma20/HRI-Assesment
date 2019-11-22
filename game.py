@@ -13,6 +13,7 @@ from functions.explore_the_world import explore_the_world
 from functions.find_face import find_face
 from functions.ar_marker_detection import cozmo_action_ar_marker_cards, reset_sequence
 from functions.action_sequence import *
+from functions.cube_stack import *
 
 ############################################### Map ##############################################
 
@@ -23,9 +24,12 @@ def cozmo_program(robot: cozmo.robot.Robot):
      get_in_position(robot)
 
      face = find_face(robot)
+     robot.say_text("I will try to stack the cubes first").wait_for_completed()
+     robot.say_text("Then it will be your turn").wait_for_completed()
+
+#demo
+     cube_stack(robot)
     
-
-
 # add communication
     
 ############################################## Game Preparation ###################################    
@@ -37,7 +41,9 @@ def cozmo_program(robot: cozmo.robot.Robot):
 ############################################# Play the game ######################################
 
 # Show markers
-     
+     robot.say_text("It's your turn now!").wait_for_completed()
+     robot.say_text("Show me the cards and i will execute the actions").wait_for_completed()
+     robot.say_text("Remember, The goal is to stack the cubes").wait_for_completed()
      result = cozmo_action_ar_marker_cards(robot)
      print(result)
     
