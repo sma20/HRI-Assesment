@@ -23,22 +23,22 @@ global action_sequence
 def execute_sequence(robot, action_sequence):
     
     print(action_sequence)
-    for action in range(len(action_sequence)):
+    for action in action_sequence:
         print (action)
-        if (action_sequence[action] == 1):
+        if (action == 0):
             detect_cube(robot)
-        elif (action_sequence[action] == 2):
+        elif (action == 1):
             approach_cube(robot)
-        elif (action_sequence[action] == 3):
+        elif (action == 2):
             cozmo_lift_up(robot)
-        elif (action_sequence[action] == 4):
+        elif (action == 3):
             cozmo_lift_down(robot)
-        elif (action_sequence[action] == 5):
+        elif (action == 4):
             turn_left(robot)
-        elif (action_sequence[action] == 6):
+        elif (action == 5):
             turn_right(robot)
-        elif (action_sequence[action] == 7):
+        elif (action == 6):
             drive_forward(robot)
-        elif (action_sequence[action] == 8):
+        elif (action == 7):
             move_backward(robot)
 
