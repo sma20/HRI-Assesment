@@ -28,6 +28,8 @@ def cube_stack(robot: cozmo.robot.Robot):
             code, reason = current_action.failure_reason
             result = current_action.result
             print("Pickup Cube failed: code=%s reason='%s' result=%s" % (code, reason, result))
+            anim = robot.play_anim_trigger(cozmo.anim.Triggers.AskToBeRightedLeft)
+            anim.wait_for_completed()
             return
 
         # Now try to place that cube on the 2nd one
@@ -37,8 +39,12 @@ def cube_stack(robot: cozmo.robot.Robot):
             code, reason = current_action.failure_reason
             result = current_action.result
             print("Place On Cube failed: code=%s reason='%s' result=%s" % (code, reason, result))
+            anim = robot.play_anim_trigger(cozmo.anim.Triggers.AskToBeRightedLeft)
+            anim.wait_for_completed()
             return
 
         print("Cozmo successfully stacked 2 blocks!")
+        anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabCelebrate)
+        anim.wait_for_completed()
 
 #cozmo.run_program(cozmo_program)

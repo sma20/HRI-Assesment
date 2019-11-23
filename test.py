@@ -21,47 +21,56 @@ from functions.movebackward import move_backward
 
 global robot
 
-# def turn_left():
-#     global robot
-#     robot.turn_in_place(degrees(-90)).wait_for_completed()
-#
-# def turn_right():
-#     global robot
-#     robot.turn_in_place(degrees(90)).wait_for_completed()
-#
-# def move_forward():
-#     global robot
-#     robot.drive_straight(distance_mm(100), speed_mmps(50)).wait_for_completed()
 
-def test2(robot):
-    actionArray = [1,2,2,3,2,1,2,3,2,3,1,2]
-    for action in range(len(actionArray)):
-        print (action)
-        if (actionArray[action] == 1):
-            turn_left(robot)
-        elif (actionArray[action] == 2):
-            turn_right(robot)
-        elif (actionArray[action] == 3):
-            drive_forward(robot)
-
-def test(robot1):
-    global robot
-    robot = robot1
-    test2(robot1)
-    #loop = asyncio.get_event_loop()
-    #loop.run_until_complete(myTaskGenerator())
-   # print("Completed All Tasks")
-   # loop.close()
-
-# async def myTaskGenerator():
-#     actionArray = [1,2,2,3,2,1,2,3,2,3,1,2]
-#     for action in range(len(actionArray)):
-#         print (action)
-#         if (actionArray[action] == 1):
-#             asyncio.ensure_future(turn_left())
-#         elif (actionArray[action] == 2):
-#             asyncio.ensure_future(turn_right())
-#         elif (actionArray[action] == 3):
-#             asyncio.ensure_future(move_forward())
+def test(robot):
+    
+     robot.say_text("CodeLabHappy").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabHappy)
+     anim.wait_for_completed()
+    
+     robot.say_text("CodeLabExcited").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabExcited)
+     anim.wait_for_completed()
+     
+     robot.say_text("CodeLabDancingMambo").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabDancingMambo)
+     anim.wait_for_completed()
+    
+     robot.say_text("CodeLabCelebrate").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabCelebrate)
+     anim.wait_for_completed()
+     
+     robot.say_text("AcknowledgeFaceNamed").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.AcknowledgeFaceNamed)
+     anim.wait_for_completed()
+     
+     
+     robot.say_text("BlockReact").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.BlockReact)
+     anim.wait_for_completed()
+     
+     robot.say_text("CodeLab123Go").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLab123Go)
+     anim.wait_for_completed()
+     
+     robot.say_text("CodeLabAmazed").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabAmazed)
+     anim.wait_for_completed()
+     
+     
+     robot.say_text("AcknowledgeObject").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.AcknowledgeObject)
+     anim.wait_for_completed()
+     
+     robot.say_text("AskToBeRightedLeft").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.AskToBeRightedLeft)
+     anim.wait_for_completed()
+     
+     robot.say_text("AskToBeRightedRight").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.AskToBeRightedRight)
+     anim.wait_for_completed()
+     
+     
+     
 
 cozmo.run_program(test)

@@ -24,16 +24,22 @@ def cozmo_program(robot: cozmo.robot.Robot):
      get_in_position(robot)
 
      face = find_face(robot)
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.AcknowledgeFaceNamed)
+     anim.wait_for_completed()
      robot.say_text("I will try to stack the cubes first").wait_for_completed()
      robot.say_text("Then it will be your turn").wait_for_completed()
-
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabExcited)
+     anim.wait_for_completed()
+     
 #demo
      cube_stack(robot)
     
 # add communication
+     
     
 ############################################## Game Preparation ###################################    
 
+# reset game
 # Victory condition check
 # if victory is false -> Reset game
 # Explain game rules to the player
@@ -42,6 +48,8 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
 # Show markers
      robot.say_text("It's your turn now!").wait_for_completed()
+     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabHappy)
+     anim.wait_for_completed()
      robot.say_text("Show me the cards and i will execute the actions").wait_for_completed()
      robot.say_text("Remember, The goal is to stack the cubes").wait_for_completed()
      result = cozmo_action_ar_marker_cards(robot)
