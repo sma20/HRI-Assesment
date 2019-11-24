@@ -38,10 +38,9 @@ def cozmo_program(robot: cozmo.robot.Robot):
      
 #demo
      cube_stack(robot)
+
      logging.info("Victory Condition check - Cozmo game")
-     cube2, cube3 = explore_the_world(robot)
-     # Assuming the height of cube (z) as 40mm.
-     if abs(cube2.pose.position.z - cube3.pose.position.z) > 40:
+     if abs(cube.pose.position.z - cube1.pose.position.z) > 40: # Assuming cube height (z) is 40mm.
           logging.info("Cube is successfully stacked")
      else:
           logging.info("Cube stack failed!")
@@ -78,9 +77,7 @@ def cozmo_program(robot: cozmo.robot.Robot):
           execute_sequence(robot, result)
 
           logging.info("Victory condition check - Human game")
-          cube4, cube5 = explore_the_world(robot)
-
-          if abs(cube4.pose.position.z - cube5.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
+          if abs(cube.pose.position.z - cube1.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
                logging.info("Cube is successfully stacked")
                victory_flag = 0
           else:
