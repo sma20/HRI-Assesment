@@ -13,6 +13,8 @@ import asyncio
 def explore_the_world(robot: cozmo.robot.Robot):
     global pose
 
+    robot.say_text("Hello Welcome to my world. I am going to explore my world please bear with me").wait_for_completed()
+
     #initialise the variables
     cube = None
     cube1 = None
@@ -52,7 +54,9 @@ def explore_the_world(robot: cozmo.robot.Robot):
             #look_around.stop()
 
     print("the type of the cube is ", type(cube.cube_id))
+    robot.say_text("the first cube is spotted").wait_for_completed()
 
+    
     cube1= cube
     id = cube.cube_id
     robot.turn_in_place(degrees(30)).wait_for_completed()
@@ -91,5 +95,7 @@ def explore_the_world(robot: cozmo.robot.Robot):
 
     # set the head position for the cozmo robot
     print("both cubes have been spotted ")
+    robot.say_text("both cubes have been spotted").wait_for_completed()
+    robot.say_text("now i am looking for a pretty face").wait_for_completed()
 
     return cube, cube1
