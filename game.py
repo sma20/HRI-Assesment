@@ -14,6 +14,7 @@ from functions.find_face import find_face
 from functions.ar_marker_detection import cozmo_action_ar_marker_cards, reset_sequence
 from functions.action_sequence import *
 from functions.cube_stack import *
+from functions.resetgame import *
 
 ############################################### Map ##############################################
 
@@ -33,7 +34,7 @@ def cozmo_program(robot: cozmo.robot.Robot):
      
 #demo
      cube_stack(robot)
-    
+     reset_game(robot)
 # add communication
      
     
