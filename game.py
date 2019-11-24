@@ -54,7 +54,7 @@ def cozmo_program(robot: cozmo.robot.Robot):
 # Show markers
      robot.say_text("It's your turn now!").wait_for_completed()
 
-     robot.say_text("Show me the cards and i will execute the actions").wait_for_completed()
+     robot.say_text("You need to show me the cards and i will execute the actions").wait_for_completed()
      robot.say_text("Remember, The goal is to stack the cubes").wait_for_completed()
      result = cozmo_action_ar_marker_cards(robot)
      print(result)
