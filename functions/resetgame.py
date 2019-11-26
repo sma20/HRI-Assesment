@@ -8,4 +8,3 @@ def reset_game(robot: cozmo.robot.Robot):
 	
 	robot.go_to_pose(Pose(0.0, 0.0, 0.0, angle_z=degrees(0)), relative_to_robot=False).wait_for_completed()
 
-cozmo.run_program(reset_game)

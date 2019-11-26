@@ -15,6 +15,7 @@ from functions.find_face import find_face
 from functions.ar_marker_detection import cozmo_action_ar_marker_cards, reset_sequence
 from functions.action_sequence import *
 from functions.cube_stack import *
+from functions.resetgame import *
 
 
 ############################################### Map ##############################################
@@ -22,6 +23,7 @@ from functions.cube_stack import *
 def cozmo_program(robot: cozmo.robot.Robot):
      logging.basicConfig(filename="cozmo_program.log", level=logging.INFO)
      reset_sequence()
+     pose = robot.pose
      cube, cube1 = explore_the_world(robot)
      logging.info("Cozmo detected Cubes:", cube, cube1)
 
@@ -29,13 +31,16 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
      face = find_face(robot)
      logging.info("Identified Face:", face)
-     anim = robot.play_anim_trigger(cozmo.anim.Triggers.AcknowledgeFaceNamed)
-     anim.wait_for_completed()
+     robot.go_to_pose(pose, relative_to_robot=False).wait_for_completed()
+
+     #anim = robot.play_anim_trigger(cozmo.anim.Triggers.AcknowledgeFaceNamed)
+     #anim.wait_for_completed()
+
      robot.say_text("I will try to stack the cubes first").wait_for_completed()
      robot.say_text("Then it will be your turn").wait_for_completed()
-     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabExcited)
-     anim.wait_for_completed()
-     
+     #anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabExcited)
+     #anim.wait_for_completed()
+
 #demo
      cube_stack(robot)
 
@@ -44,12 +49,11 @@ def cozmo_program(robot: cozmo.robot.Robot):
           logging.info("Cube is successfully stacked")
      else:
           logging.info("Cube stack failed!")
-
-    
+          reset_game(robot)
 # add communication
-     
-    
-############################################## Game Preparation ###################################    
+
+
+############################################## Game Preparation ###################################
 
 # reset game
 # Victory condition check
@@ -60,9 +64,8 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
 # Show markers
      robot.say_text("It's your turn now!").wait_for_completed()
-     anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabHappy)
-     anim.wait_for_completed()
-     robot.say_text("Show me the cards and i will execute the actions").wait_for_completed()
+
+     robot.say_text("You need to show me the cards and i will execute the actions").wait_for_completed()
      robot.say_text("Remember, The goal is to stack the cubes").wait_for_completed()
      victory_flag=1
 
@@ -72,6 +75,7 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
           result = cozmo_action_ar_marker_cards(robot)
           logging.info("Marker Cards detected - Action Sequence results: ", result)
+
 
           logging.info("Executing Sequence")
           execute_sequence(robot, result)
@@ -93,10 +97,10 @@ def cozmo_program(robot: cozmo.robot.Robot):
 ############################################# Game result ########################################
 
 # add communication
-    
-    
-    
-    
-cozmo.robot.Robot.drive_off_charger_on_connect = False  
+
+
+
+
+cozmo.robot.Robot.drive_off_charger_on_connect = False
 cozmo.run_program(cozmo_program, use_viewer=True)
 #cozmo.run_program(execute_sequence)
