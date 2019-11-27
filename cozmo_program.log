@@ -1,0 +1,338 @@
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=3 battery=80% pose=<Pose <Position x: 196.91 y: 172.72 z: 20.74> <Quaternion q0: -0.32 q1: -0.00 q2: -0.00 q3: -0.95 (angle_z: <Angle 2.48 radians (142.32 degrees)>)> origin_id=5> is_visible=True>
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=2 battery=80% pose=<Pose <Position x: 232.41 y: -24.09 z: 19.84> <Quaternion q0: 0.93 q1: 0.00 q2: -0.00 q3: 0.38 (angle_z: <Angle 0.78 radians (44.61 degrees)>)> origin_id=5> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='LOWER FORK LIFT' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 95, in arm_cards_appeared_event_handler
+    add_actions(LOWER_FORK_LIFT)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='LOWER FORK LIFT' style=3 event=575 duration=1.0 pitch=0.0>
+INFO:root:Executing Sequence
+INFO:root:Victory condition check - Human game
+INFO:root:Cube is successfully stacked
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=2 battery=84% pose=<Pose <Position x: 225.27 y: -24.23 z: 19.64> <Quaternion q0: 0.93 q1: -0.00 q2: 0.00 q3: 0.37 (angle_z: <Angle 0.75 radians (42.84 degrees)>)> origin_id=7> is_visible=True>
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=3 battery=80% pose=<Pose <Position x: 225.47 y: 148.18 z: 21.36> <Quaternion q0: 0.89 q1: 0.00 q2: 0.00 q3: 0.46 (angle_z: <Angle 0.96 radians (55.10 degrees)>)> origin_id=7> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:root:Executing Sequence
+INFO:root:Victory condition check - Human game
+INFO:root:Cube stack failed!
+INFO:root:Reset the game and start again! Press Cntrl + C to exit
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:root:Executing Sequence
+INFO:root:Victory condition check - Human game
+INFO:root:Cube stack failed!
+INFO:root:Reset the game and start again! Press Cntrl + C to exit
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:root:Executing Sequence
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.
+INFO:cozmo.general:Exit requested by user
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=2 battery=80% pose=<Pose <Position x: 195.20 y: 77.13 z: 18.65> <Quaternion q0: 0.90 q1: 0.00 q2: -0.00 q3: -0.43 (angle_z: <Angle -0.89 radians (-51.07 degrees)>)> origin_id=3> is_visible=False>
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=3 battery=78% pose=<Pose <Position x: 313.02 y: -109.87 z: 14.89> <Quaternion q0: 0.53 q1: 0.00 q2: 0.00 q3: -0.85 (angle_z: <Angle -2.02 radians (-115.66 degrees)>)> origin_id=3> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:root:Executing Sequence
+INFO:cozmo.general:Robot delocalized - invalidating poses for all objects
+INFO:cozmo.general:Robot delocalized - invalidating poses for all objects
+INFO:root:Victory condition check - Human game
+INFO:root:Cube stack failed!
+INFO:root:Reset the game and start again! Press Cntrl + C to exit
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=3 battery=78% pose=<Pose <Position x: 313.14 y: -115.08 z: 11.46> <Quaternion q0: 0.46 q1: 0.00 q2: 0.00 q3: -0.89 (angle_z: <Angle -2.20 radians (-125.82 degrees)>)> origin_id=3> is_visible=True>
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=2 battery=74% pose=<Pose <Position x: 220.63 y: 38.46 z: 7.91> <Quaternion q0: 0.12 q1: 0.00 q2: -0.00 q3: -0.99 (angle_z: <Angle -2.91 radians (-166.68 degrees)>)> origin_id=3> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:root:Executing Sequence
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<_connect_viewer.<locals>.view_connector() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/run.py:613> exception=RobotBusy('Robot is already performing 1 action(s) <AnimationTrigger state=action_running trigger=MajorFail loop_count=1 ignore_tracks=[] use_lift_safe=False>')>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/run.py", line 620, in view_connector
+    await coz_conn._loop.run_in_executor(None, f, base._SyncProxy(coz_conn))
+  File "/Users/Mariam/anaconda3/lib/python3.7/concurrent/futures/thread.py", line 57, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/run.py", line 835, in wrapper
+    f(robot)
+  File "game.py", line 81, in cozmo_program
+    execute_sequence(robot, result)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/action_sequence.py", line 29, in execute_sequence
+    detect_cube(robot)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/detectcube.py", line 22, in detect_cube
+    robot.say_text("Where is the cube?").wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/base.py", line 179, in wrap
+    return  _dispatch_coroutine(value(*a, **kw), wrapped._loop, wrapped._sync_abort_future)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/base.py", line 234, in _dispatch_coroutine
+    result =  list(result.done)[0].result()
+  File "/Users/Mariam/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 425, in result
+    return self.__get_result()
+  File "/Users/Mariam/anaconda3/lib/python3.7/concurrent/futures/_base.py", line 384, in __get_result
+    raise self._exception
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/base.py", line 198, in wrap
+    return f(*a, **kw)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <AnimationTrigger state=action_running trigger=MajorFail loop_count=1 ignore_tracks=[] use_lift_safe=False>
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=2 battery=78% pose=<Pose <Position x: 295.19 y: 19.22 z: 11.60> <Quaternion q0: -0.45 q1: -0.00 q2: 0.00 q3: -0.89 (angle_z: <Angle 2.21 radians (126.47 degrees)>)> origin_id=3> is_visible=True>
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=3 battery=78% pose=<Pose <Position x: 299.99 y: -173.51 z: 7.20> <Quaternion q0: 0.85 q1: -0.00 q2: -0.00 q3: 0.53 (angle_z: <Angle 1.11 radians (63.49 degrees)>)> origin_id=3> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='DETECT CUBE' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 83, in arm_cards_appeared_event_handler
+    add_actions(DETECT_CUBE)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='DETECT CUBE' style=3 event=575 duration=1.0 pitch=0.0>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='APPROACH CUBE' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 87, in arm_cards_appeared_event_handler
+    add_actions(APPROACH_CUBE)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='APPROACH CUBE' style=3 event=575 duration=1.0 pitch=0.0>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='APPROACH CUBE' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 87, in arm_cards_appeared_event_handler
+    add_actions(APPROACH_CUBE)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='APPROACH CUBE' style=3 event=575 duration=1.0 pitch=0.0>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='APPROACH CUBE' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 87, in arm_cards_appeared_event_handler
+    add_actions(APPROACH_CUBE)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='APPROACH CUBE' style=3 event=575 duration=1.0 pitch=0.0>
+INFO:root:Executing Sequence
+INFO:root:Victory condition check - Human game
+INFO:root:Cube stack failed!
+INFO:root:Reset the game and start again! Press Cntrl + C to exit
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=3 battery=78% pose=<Pose <Position x: 332.98 y: -211.27 z: -0.66> <Quaternion q0: -0.83 q1: -0.00 q2: -0.00 q3: -0.56 (angle_z: <Angle 1.19 radians (68.10 degrees)>)> origin_id=3> is_visible=True>
+WARNING:cozmo.general:ObjectConnectionState event received for unknown object ID 1
+WARNING:cozmo.general:ObjectConnectionState event received for unknown object ID 1
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=2 battery=80% pose=<Pose <Position x: 291.26 y: 8.40 z: 10.19> <Quaternion q0: 1.00 q1: 0.00 q2: 0.00 q3: -0.10 (angle_z: <Angle -0.20 radians (-11.45 degrees)>)> origin_id=3> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='MOVE FORWARD' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 107, in arm_cards_appeared_event_handler
+    add_actions(MOVE_FORWARD)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='MOVE FORWARD' style=3 event=575 duration=1.0 pitch=0.0>
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.
+INFO:cozmo.general:Sending pickup object request for object=<LightCube object_id=3 battery=80% pose=<Pose <Position x: 239.13 y: -230.58 z: 12.84> <Quaternion q0: -0.27 q1: 0.00 q2: 0.00 q3: -0.96 (angle_z: <Angle 2.60 radians (148.89 degrees)>)> origin_id=3> is_visible=True>
+WARNING:cozmo.general:ObjectConnectionState event received for unknown object ID 1
+WARNING:cozmo.general:ObjectConnectionState event received for unknown object ID 1
+INFO:cozmo.general:Sending place on object request for target object=<LightCube object_id=2 battery=80% pose=<Pose <Position x: 279.06 y: -23.50 z: 8.63> <Quaternion q0: 0.96 q1: 0.00 q2: 0.00 q3: -0.28 (angle_z: <Angle -0.58 radians (-33.04 degrees)>)> origin_id=3> is_visible=False>
+INFO:root:Victory Condition check - Cozmo game
+INFO:root:Cube is successfully stacked
+INFO:root:Human interaction with cozmo starts
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType01 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType02 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType03 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType04 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType05 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType06 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType07 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType08 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+INFO:cozmo.general:Defined: <CustomObject object_type=CustomObjectTypes.CustomType09 x_size_mm=10.0 y_size_mm=150.0 z_size_mm=100.0 is_unique=True is_visible=False>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='MOVE FORWARD' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 107, in arm_cards_appeared_event_handler
+    add_actions(MOVE_FORWARD)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='MOVE FORWARD' style=3 event=575 duration=1.0 pitch=0.0>
+ERROR:asyncio:Task exception was never retrieved
+future: <Task finished coro=<Dispatcher._dispatch_event() done, defined at /Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py:415> exception=RobotBusy("Robot is already performing 1 action(s) <SayText state=action_running text='MOVE FORWARD' style=3 event=575 duration=1.0 pitch=0.0>")>
+Traceback (most recent call last):
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 426, in _dispatch_event
+    result = event._dispatch_to_func(handler.f)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/event.py", line 210, in _dispatch_to_func
+    return f(self, **self._params())
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 107, in arm_cards_appeared_event_handler
+    add_actions(MOVE_FORWARD)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 39, in add_actions
+    confirm_card(actionName)
+  File "/Users/Mariam/Desktop/HRI/HRI/CW2/v2/functions/ar_marker_detection.py", line 71, in confirm_card
+    robot1.say_text(card_name_text).wait_for_completed()
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/robot.py", line 1428, in say_text
+    num_retries=num_retries)
+  File "/Users/Mariam/anaconda3/lib/python3.7/site-packages/cozmo/action.py", line 553, in _send_single_action
+    (len(self._in_progress), action))
+cozmo.exceptions.RobotBusy: Robot is already performing 1 action(s) <SayText state=action_running text='MOVE FORWARD' style=3 event=575 duration=1.0 pitch=0.0>
+INFO:root:Executing Sequence
+INFO:cozmo.general:Robot delocalized - invalidating poses for all objects
+INFO:cozmo.general:Robot delocalized - invalidating poses for all objects
+INFO:root:Victory condition check - Human game
+INFO:root:Cube stack failed!
+INFO:root:Reset the game and start again! Press Cntrl + C to exit
+INFO:cozmo.general:Shutting down connection
+INFO:cozmo.general:iOS device_id=13 disconnected.

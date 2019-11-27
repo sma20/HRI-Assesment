@@ -24,45 +24,44 @@ def cozmo_program(robot: cozmo.robot.Robot):
      logging.basicConfig(filename="cozmo_program.log", level=logging.INFO)
      reset_sequence()
      pose = robot.pose
+     
+# explore world
      cube, cube1 = explore_the_world(robot)
      logging.info("Cozmo detected Cubes:", cube, cube1)
 
      get_in_position(robot)
 
+# meet the player
      face = find_face(robot)
      logging.info("Identified Face:", face)
      robot.go_to_pose(pose, relative_to_robot=False).wait_for_completed()
 
-     #anim = robot.play_anim_trigger(cozmo.anim.Triggers.AcknowledgeFaceNamed)
-     #anim.wait_for_completed()
-
+  
+############################################## Game Preparation ###################################
+     
      robot.say_text("I will try to stack the cubes first").wait_for_completed()
      robot.say_text("Then it will be your turn").wait_for_completed()
-     #anim = robot.play_anim_trigger(cozmo.anim.Triggers.CodeLabExcited)
-     #anim.wait_for_completed()
+   
 
-#demo
+# Autonomous play
      cube_stack(robot)
 
      logging.info("Victory Condition check - Cozmo game")
+     
+# Victory condition check
      if abs(cube.pose.position.z - cube1.pose.position.z) > 40: # Assuming cube height (z) is 40mm.
           logging.info("Cube is successfully stacked")
      else:
           logging.info("Cube stack failed!")
-          reset_game(robot)
-# add communication
-
-
-############################################## Game Preparation ###################################
-
+          
 # reset game
-# Victory condition check
-# if victory is false -> Reset game
-# Explain game rules to the player
+
+     reset_game(robot)
 
 ############################################# Play the game ######################################
 
-# Show markers
+# Explain game rules to the player
+
      robot.say_text("It's your turn now!").wait_for_completed()
 
      robot.say_text("You need to show me the cards and i will execute the actions").wait_for_completed()
@@ -72,33 +71,29 @@ def cozmo_program(robot: cozmo.robot.Robot):
      logging.info("Human interaction with cozmo starts")
      while (victory_flag):
           reset_sequence()
-
+          
+# Show markers
           result = cozmo_action_ar_marker_cards(robot)
           logging.info("Marker Cards detected - Action Sequence results: ", result)
 
-
+# Execute the actions.
           logging.info("Executing Sequence")
           execute_sequence(robot, result)
+          
+############################################# Game result ########################################
 
+# results of the game
+          
           logging.info("Victory condition check - Human game")
           if abs(cube.pose.position.z - cube1.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
                logging.info("Cube is successfully stacked")
+               robot.say_text("Well done").wait_for_completed()
                victory_flag = 0
           else:
                logging.info("Cube stack failed!")
                logging.info("Reset the game and start again! Press Cntrl + C to exit")
-
-# add communication
-# Store the sequence of the control cards
-# Execute the actions.
-#
-
-
-############################################# Game result ########################################
-
-# add communication
-
-
+               robot.say_text("Nice try! do you want to play again?").wait_for_completed()
+               break
 
 
 cozmo.robot.Robot.drive_off_charger_on_connect = False
