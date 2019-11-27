@@ -44,12 +44,12 @@ def cozmo_program(robot: cozmo.robot.Robot):
 #demo
      cube_stack(robot)
 
-     logging.info("Victory Condition check - Cozmo game")
-     if abs(cube.pose.position.z - cube1.pose.position.z) > 40: # Assuming cube height (z) is 40mm.
-          logging.info("Cube is successfully stacked")
-     else:
-          logging.info("Cube stack failed!")
-          reset_game(robot)
+     logging.info("Victory Condition check - Cozmo game c position",cube.pose.position, "c1 pos", cube1.pose.position)
+     #if abs(cube.pose.position.z - cube1.pose.position.z) > 40: # Assuming cube height (z) is 40mm.
+          #logging.info("Cube is successfully stacked")
+     #else:
+          #logging.info("Cube stack failed!")
+          #reset_game(robot)
 # add communication
 
 
@@ -70,23 +70,23 @@ def cozmo_program(robot: cozmo.robot.Robot):
      victory_flag=1
 
      logging.info("Human interaction with cozmo starts")
-     while (victory_flag):
-          reset_sequence()
+     #while (victory_flag):
+     #reset_sequence()
 
-          result = cozmo_action_ar_marker_cards(robot)
-          logging.info("Marker Cards detected - Action Sequence results: ", result)
+     result = cozmo_action_ar_marker_cards(robot)
+     logging.info("Marker Cards detected - Action Sequence results: ", result)
 
 
-          logging.info("Executing Sequence")
-          execute_sequence(robot, result)
+     logging.info("Executing Sequence")
+     execute_sequence(robot, result)
 
-          logging.info("Victory condition check - Human game")
-          if abs(cube.pose.position.z - cube1.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
-               logging.info("Cube is successfully stacked")
-               victory_flag = 0
-          else:
-               logging.info("Cube stack failed!")
-               logging.info("Reset the game and start again! Press Cntrl + C to exit")
+     logging.info("Victory condition check - Human game c position",cube.pose.position, "c1 pos", cube1.pose.position)
+          #if abs(cube.pose.position.z - cube1.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
+               #logging.info("Cube is successfully stacked")
+               #victory_flag = 0
+          #else:
+               #logging.info("Cube stack failed!")
+               #logging.info("Reset the game and start again! Press Cntrl + C to exit")
 
 # add communication
 # Store the sequence of the control cards
