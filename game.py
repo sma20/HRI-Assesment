@@ -43,13 +43,7 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
 #demo
      cube_stack(robot)
-
-     logging.info("Victory Condition check - Cozmo game c position",cube.pose.position, "c1 pos", cube1.pose.position)
-     #if abs(cube.pose.position.z - cube1.pose.position.z) > 40: # Assuming cube height (z) is 40mm.
-          #logging.info("Cube is successfully stacked")
-     #else:
-          #logging.info("Cube stack failed!")
-          #reset_game(robot)
+     #reset_game(robot)
 # add communication
 
 
@@ -67,11 +61,8 @@ def cozmo_program(robot: cozmo.robot.Robot):
 
      robot.say_text("You need to show me the cards and i will execute the actions").wait_for_completed()
      robot.say_text("Remember, The goal is to stack the cubes").wait_for_completed()
-     victory_flag=1
 
      logging.info("Human interaction with cozmo starts")
-     #while (victory_flag):
-     #reset_sequence()
 
      result = cozmo_action_ar_marker_cards(robot)
      logging.info("Marker Cards detected - Action Sequence results: ", result)
@@ -80,13 +71,11 @@ def cozmo_program(robot: cozmo.robot.Robot):
      logging.info("Executing Sequence")
      execute_sequence(robot, result)
 
-     logging.info("Victory condition check - Human game c position",cube.pose.position, "c1 pos", cube1.pose.position)
-          #if abs(cube.pose.position.z - cube1.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
-               #logging.info("Cube is successfully stacked")
-               #victory_flag = 0
-          #else:
-               #logging.info("Cube stack failed!")
-               #logging.info("Reset the game and start again! Press Cntrl + C to exit")
+     logging.info("Victory condition check - Cube 1 position:",cube.pose.position, "Cube 2 position:", cube1.pose.position)
+          if abs(cube.pose.position.z - cube1.pose.position.z) > 40:  # Assuming cube height (z) is 40mm.
+               robot.say_text("You won the game").wait_for_completed()
+          else:
+               robot.say_text("Better luck next time").wait_for_completed()
 
 # add communication
 # Store the sequence of the control cards
