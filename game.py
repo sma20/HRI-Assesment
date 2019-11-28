@@ -21,11 +21,12 @@ from functions.resetgame import *
 ############################################### Map ##############################################
 
 def cozmo_program(robot: cozmo.robot.Robot):
-     logging.basicConfig(filename="cozmo_program.log", level=logging.INFO)
+     logging.basicConfig(format='%(asctime)s - %(message)s', filename="cozmo_program.log", level=logging.INFO)
      reset_sequence()
      pose = robot.pose
      
 # explore world
+     logging.info("Cozmo starts exploring")
      cube, cube1 = explore_the_world(robot)
      logging.info("Cozmo detected Cubes:", cube, cube1)
 
